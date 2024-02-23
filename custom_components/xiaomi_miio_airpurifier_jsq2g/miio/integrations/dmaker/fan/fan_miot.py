@@ -3,8 +3,8 @@ from typing import Any, Dict, Optional
 
 import click
 
-from miio import DeviceStatus, MiotDevice
-from miio.click_common import EnumType, command, format_output
+from .... import DeviceStatus, MiotDevice
+from ....click_common import EnumType, command, format_output
 
 
 class OperationMode(enum.Enum):

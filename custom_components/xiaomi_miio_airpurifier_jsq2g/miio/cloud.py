@@ -15,7 +15,7 @@ except ImportError:
     echo = click.echo
 
 
-from miio.exceptions import CloudException
+from .exceptions import CloudException
 
 _LOGGER = logging.getLogger(__name__)
 

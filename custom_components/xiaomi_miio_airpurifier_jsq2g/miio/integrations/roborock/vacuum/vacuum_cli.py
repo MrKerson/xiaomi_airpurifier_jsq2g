@@ -13,21 +13,21 @@ import click
 from appdirs import user_cache_dir
 from tqdm import tqdm
 
-from miio.click_common import (
+from ....click_common import (
     ExceptionHandlerGroup,
     LiteralParamType,
     validate_ip,
     validate_token,
 )
-from miio.device import Device, UpdateState
-from miio.exceptions import DeviceInfoUnavailableException
-from miio.miioprotocol import MiIOProtocol
-from miio.updater import OneShotServer
+from ....device import Device, UpdateState
+from ....exceptions import DeviceInfoUnavailableException
+from ....miioprotocol import MiIOProtocol
+from ....updater import OneShotServer
 
 from .vacuum import CarpetCleaningMode, Consumable, RoborockVacuum, TimerState
 from .vacuum_tui import VacuumTUI
 
-from miio.discovery import Discovery
+from ....discovery import Discovery
 
 _LOGGER = logging.getLogger(__name__)
 pass_dev = click.make_pass_decorator(Device, ensure=True)

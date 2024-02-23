@@ -8,8 +8,8 @@ from typing import Callable, Dict, List, Optional
 import click
 import yaml
 
-from miio import Device, DeviceError, DeviceException
-from miio.click_common import command
+from .... import Device, DeviceError, DeviceException
+from ....click_common import command
 
 from .alarm import Alarm
 from .light import Light

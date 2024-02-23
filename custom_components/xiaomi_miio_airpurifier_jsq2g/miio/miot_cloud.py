@@ -15,8 +15,8 @@ try:
 except ImportError:
     from pydantic import BaseModel, Field
 
-from miio import CloudException
-from miio.miot_models import DeviceModel
+from . import CloudException
+from .miot_models import DeviceModel
 
 _LOGGER = logging.getLogger(__name__)
 

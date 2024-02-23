@@ -5,7 +5,7 @@ from typing import Dict, Optional
 
 import zeroconf
 
-from miio import Device, DeviceFactory
+from . import Device, DeviceFactory
 
 _LOGGER = logging.getLogger(__name__)
 

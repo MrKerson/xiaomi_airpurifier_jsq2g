@@ -3,8 +3,8 @@ from typing import Any, Dict
 
 import click
 
-from miio.click_common import EnumType, command, format_output
-from miio.miot_device import DeviceStatus, MiotDevice, MiotMapping
+from ....click_common import EnumType, command, format_output
+from ....miot_device import DeviceStatus, MiotDevice, MiotMapping
 
 
 class Switch(enum.Enum):

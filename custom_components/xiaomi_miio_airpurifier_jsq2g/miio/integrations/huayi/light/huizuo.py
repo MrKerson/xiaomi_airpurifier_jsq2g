@@ -9,8 +9,8 @@ from typing import Any, Dict, Optional
 
 import click
 
-from miio import DeviceStatus, MiotDevice, UnsupportedFeatureException
-from miio.click_common import command, format_output
+from .... import DeviceStatus, MiotDevice, UnsupportedFeatureException
+from ....click_common import command, format_output
 
 _LOGGER = logging.getLogger(__name__)
 

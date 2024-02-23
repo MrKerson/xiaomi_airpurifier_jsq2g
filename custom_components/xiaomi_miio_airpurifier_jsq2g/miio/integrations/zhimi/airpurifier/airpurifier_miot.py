@@ -4,9 +4,9 @@ from typing import Any, Dict, Optional
 
 import click
 
-from miio import DeviceStatus, MiotDevice
-from miio.click_common import EnumType, command, format_output
-from miio.exceptions import UnsupportedFeatureException
+from .... import DeviceStatus, MiotDevice
+from ....click_common import EnumType, command, format_output
+from ....exceptions import UnsupportedFeatureException
 
 from .airfilter_util import FilterType, FilterTypeUtil
 

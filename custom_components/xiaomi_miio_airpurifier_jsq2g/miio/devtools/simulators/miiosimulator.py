@@ -13,7 +13,7 @@ except ImportError:
     from pydantic import BaseModel, Field, PrivateAttr
 from yaml import safe_load
 
-from miio import PushServer
+from . import PushServer
 
 from .common import create_info_response, did_and_mac_for_model
 

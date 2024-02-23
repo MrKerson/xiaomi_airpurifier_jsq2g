@@ -5,8 +5,8 @@ from typing import Dict
 
 import click
 
-from miio.click_common import EnumType, command, format_output
-from miio.miot_device import DeviceStatus, MiotDevice
+from ....click_common import EnumType, command, format_output
+from ....miot_device import DeviceStatus, MiotDevice
 
 _LOGGER = logging.getLogger(__name__)
 MIJIA_VACUUM_V1 = "mijia.vacuum.v1"

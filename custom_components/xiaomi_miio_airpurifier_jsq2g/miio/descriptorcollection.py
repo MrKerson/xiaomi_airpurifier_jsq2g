@@ -16,7 +16,7 @@ from .descriptors import (
 _LOGGER = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
-    from miio import Device
+    from . import Device
 
 
 T = TypeVar("T")

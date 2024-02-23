@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 import pytest
 
-from miio import DeviceError, RoborockVacuum, UnsupportedFeatureException
-from miio.tests.dummies import DummyDevice, DummyMiIOProtocol
+from .....device import DeviceError, RoborockVacuum, UnsupportedFeatureException
+from .....tests.dummies import DummyDevice, DummyMiIOProtocol
 
 from ..updatehelper import UpdateHelper
 from ..vacuum import (
@@ -426,7 +426,7 @@ class TestVacuum(TestCase):
 
     def test_info_no_cloud(self):
         """Test the info functionality for non-cloud connected device."""
-        from miio.exceptions import DeviceInfoUnavailableException
+        from .....exceptions import DeviceInfoUnavailableException
 
         with patch(
             "miio.Device._fetch_info", side_effect=DeviceInfoUnavailableException()

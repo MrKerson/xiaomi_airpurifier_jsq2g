@@ -2,12 +2,12 @@ import logging
 from functools import partial
 from typing import Dict, List, Optional
 
-from miio import MiotDevice
-from miio.click_common import command
-from miio.descriptors import AccessFlags, ActionDescriptor, PropertyDescriptor
-from miio.miot_cloud import MiotCloud
-from miio.miot_device import MiotMapping
-from miio.miot_models import DeviceModel, MiotAccess, MiotAction, MiotService
+from ... import MiotDevice
+from ...click_common import command
+from ...descriptors import AccessFlags, ActionDescriptor, PropertyDescriptor
+from ...miot_cloud import MiotCloud
+from ...miot_device import MiotMapping
+from ...miot_models import DeviceModel, MiotAccess, MiotAction, MiotService
 
 from .status import GenericMiotStatus
 

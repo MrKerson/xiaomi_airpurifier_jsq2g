@@ -3,8 +3,8 @@
 import logging
 from datetime import datetime
 
-from miio import DeviceException
-from miio.push_server import EventInfo
+from .... import DeviceException
+from ....push_server import EventInfo
 
 from .gatewaydevice import GatewayDevice
 

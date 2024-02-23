@@ -2,8 +2,8 @@ import logging
 
 import click
 
-from miio import Device, DeviceStatus
-from miio.click_common import command, format_output
+from .... import Device, DeviceStatus
+from ....click_common import command, format_output
 
 _LOGGER = logging.getLogger(__name__)
 

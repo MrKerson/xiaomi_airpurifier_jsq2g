@@ -1,8 +1,8 @@
 import logging
 from typing import TYPE_CHECKING, Dict, Iterable
 
-from miio import DeviceStatus
-from miio.miot_models import DeviceModel, MiotAccess, MiotProperty
+from ... import DeviceStatus
+from ...miot_models import DeviceModel, MiotAccess, MiotProperty
 
 _LOGGER = logging.getLogger(__name__)
 

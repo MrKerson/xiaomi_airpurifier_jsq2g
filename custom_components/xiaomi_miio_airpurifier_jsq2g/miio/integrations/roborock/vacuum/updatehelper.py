@@ -1,7 +1,7 @@
 import logging
 from typing import Callable, Dict
 
-from miio import DeviceException, DeviceStatus
+from .... import DeviceException, DeviceStatus
 
 _LOGGER = logging.getLogger(__name__)
 

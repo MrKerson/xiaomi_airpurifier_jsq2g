@@ -9,8 +9,8 @@ from urllib.parse import urlparse
 
 import click
 
-from miio.click_common import EnumType, command, format_output
-from miio.device import Device, DeviceStatus
+from ....click_common import EnumType, command, format_output
+from ....device import Device, DeviceStatus
 
 _LOGGER = logging.getLogger(__name__)
 

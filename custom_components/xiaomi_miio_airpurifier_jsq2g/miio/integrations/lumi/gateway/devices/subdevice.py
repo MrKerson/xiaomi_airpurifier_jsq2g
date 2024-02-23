@@ -6,9 +6,9 @@ from typing import TYPE_CHECKING, Dict, List, Optional
 import attr
 import click
 
-from miio import DeviceException
-from miio.click_common import command
-from miio.push_server import EventInfo
+from ..... import DeviceException
+from .....click_common import command
+from .....push_server import EventInfo
 
 from ..gateway import GATEWAY_MODEL_EU, GATEWAY_MODEL_ZIG3, GatewayCallback
 

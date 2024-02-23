@@ -3,9 +3,9 @@ from typing import Any, Dict
 
 import click
 
-from miio import DeviceException, DeviceStatus, MiotDevice
-from miio.click_common import EnumType, command, format_output
-from miio.utils import deprecated
+from .... import DeviceException, DeviceStatus, MiotDevice
+from ....click_common import EnumType, command, format_output
+from ....utils import deprecated
 
 
 class OperationMode(enum.Enum):

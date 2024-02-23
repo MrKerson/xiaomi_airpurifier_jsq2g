@@ -2,7 +2,7 @@ from unittest import TestCase
 
 import pytest
 
-from miio import AirDogX3
+from . import AirDogX3
 from miio.tests.dummies import DummyDevice
 
 from ..airpurifier_airdog import (

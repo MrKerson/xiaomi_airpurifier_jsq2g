@@ -3,8 +3,8 @@ from typing import Any, Dict, List
 
 import click
 
-from miio.click_common import EnumType, command, format_output
-from miio.miot_device import MiotDevice
+from ....click_common import EnumType, command, format_output
+from ....miot_device import MiotDevice
 
 from .status import OperatingMode, PetWaterDispenserStatus
 

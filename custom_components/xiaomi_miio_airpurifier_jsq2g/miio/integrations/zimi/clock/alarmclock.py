@@ -3,8 +3,8 @@ import time
 
 import click
 
-from miio import Device, DeviceStatus
-from miio.click_common import EnumType, command
+from .... import Device, DeviceStatus
+from ....click_common import EnumType, command
 
 
 class HourlySystem(enum.Enum):

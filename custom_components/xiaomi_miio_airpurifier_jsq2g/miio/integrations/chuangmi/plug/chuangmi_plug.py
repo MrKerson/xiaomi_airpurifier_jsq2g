@@ -4,9 +4,9 @@ from typing import Any, Dict, Optional
 
 import click
 
-from miio import Device, DeviceException, DeviceStatus
-from miio.click_common import command, format_output
-from miio.utils import deprecated
+from .... import Device, DeviceException, DeviceStatus
+from ....click_common import command, format_output
+from ....utils import deprecated
 
 _LOGGER = logging.getLogger(__name__)
 

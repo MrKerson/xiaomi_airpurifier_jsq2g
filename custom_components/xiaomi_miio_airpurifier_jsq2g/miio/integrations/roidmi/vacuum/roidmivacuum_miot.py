@@ -9,11 +9,11 @@ from typing import Dict
 
 import click
 
-from miio.click_common import EnumType, command
-from miio.integrations.roborock.vacuum.vacuumcontainers import (  # TODO: remove roborock import
+from ....click_common import EnumType, command
+from ....integrations.roborock.vacuum.vacuumcontainers import (  # TODO: remove roborock import
     DNDStatus,
 )
-from miio.miot_device import DeviceStatus, MiotDevice, MiotMapping
+from ....miot_device import DeviceStatus, MiotDevice, MiotMapping
 
 _LOGGER = logging.getLogger(__name__)
 

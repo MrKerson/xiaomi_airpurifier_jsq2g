@@ -7,8 +7,8 @@ from typing import List, Optional
 
 import click
 
-from miio.click_common import command, format_output
-from miio.device import Device, DeviceStatus
+from ....click_common import command, format_output
+from ....device import Device, DeviceStatus
 
 _LOGGER = logging.getLogger(__name__)
 

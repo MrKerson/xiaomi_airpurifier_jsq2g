@@ -6,7 +6,7 @@ from typing import Dict
 import attr
 import yaml
 
-from miio.descriptors import ValidSettingRange
+from ....descriptors import ValidSettingRange
 
 _LOGGER = logging.getLogger(__name__)
 

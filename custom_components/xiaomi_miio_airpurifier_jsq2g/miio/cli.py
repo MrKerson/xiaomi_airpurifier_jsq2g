@@ -3,14 +3,14 @@ from typing import Any, Dict
 
 import click
 
-from miio import Discovery
-from miio.click_common import (
+from . import Discovery
+from .click_common import (
     DeviceGroupMeta,
     ExceptionHandlerGroup,
     GlobalContextObject,
     json_output,
 )
-from miio.miioprotocol import MiIOProtocol
+from .miioprotocol import MiIOProtocol
 
 from .cloud import cloud
 from .devicefactory import factory

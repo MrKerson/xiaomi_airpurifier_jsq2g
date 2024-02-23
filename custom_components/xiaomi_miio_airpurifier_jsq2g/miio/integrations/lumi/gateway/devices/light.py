@@ -2,7 +2,7 @@
 
 import click
 
-from miio.click_common import command
+from .....click_common import command
 
 from .subdevice import SubDevice
 

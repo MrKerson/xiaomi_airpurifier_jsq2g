@@ -13,7 +13,7 @@ except ImportError:
     echo = click.echo
 
 
-from miio import Message
+from . import Message
 
 
 def read_payloads_from_file(file, tokens: List[str]):

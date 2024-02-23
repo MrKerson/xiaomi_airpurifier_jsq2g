@@ -3,7 +3,7 @@ from pprint import pformat as pf
 
 import click
 
-from miio import Device
+from . import Device
 
 _LOGGER = logging.getLogger(__name__)
 

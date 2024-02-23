@@ -3,7 +3,7 @@
 import logging
 from typing import TYPE_CHECKING, List, Optional
 
-from miio import DeviceException
+from .... import DeviceException
 
 _LOGGER = logging.getLogger(__name__)
 

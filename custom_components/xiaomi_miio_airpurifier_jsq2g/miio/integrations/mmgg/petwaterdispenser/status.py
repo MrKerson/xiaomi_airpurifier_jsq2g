@@ -2,7 +2,7 @@ import enum
 from datetime import timedelta
 from typing import Any, Dict
 
-from miio.miot_device import DeviceStatus
+from ....miot_device import DeviceStatus
 
 
 class OperatingMode(enum.Enum):

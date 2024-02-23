@@ -19,8 +19,8 @@ from construct import (
     this,
 )
 
-from miio.click_common import command, format_output
-from miio.device import Device
+from ....click_common import command, format_output
+from ....device import Device
 
 
 class ChuangmiIr(Device):

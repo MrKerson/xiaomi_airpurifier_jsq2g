@@ -11,9 +11,9 @@ try:
     from pydantic.v1 import Field, validator
 except ImportError:
     from pydantic import Field, validator
-from miio import PushServer
-from miio.miot_cloud import MiotCloud
-from miio.miot_models import DeviceModel, MiotAccess, MiotProperty, MiotService
+from ... import PushServer
+from ...miot_cloud import MiotCloud
+from ...miot_models import DeviceModel, MiotAccess, MiotProperty, MiotService
 
 from .common import create_info_response, did_and_mac_for_model
 
