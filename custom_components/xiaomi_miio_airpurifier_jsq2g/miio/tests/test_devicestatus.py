@@ -3,9 +3,9 @@ from enum import Enum
 
 import pytest
 
-from miio import DeviceStatus
-from miio.descriptors import EnumDescriptor, RangeDescriptor, ValidSettingRange
-from miio.devicestatus import sensor, setting
+from ..device import DeviceStatus
+from ..descriptors import EnumDescriptor, RangeDescriptor, ValidSettingRange
+from ..devicestatus import sensor, setting
 
 
 def test_multiple():

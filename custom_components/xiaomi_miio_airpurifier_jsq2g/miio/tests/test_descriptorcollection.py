@@ -1,6 +1,6 @@
 import pytest
 
-from miio import (
+from ..device import (
     AccessFlags,
     ActionDescriptor,
     DescriptorCollection,
@@ -11,7 +11,7 @@ from miio import (
     RangeDescriptor,
     ValidSettingRange,
 )
-from miio.devicestatus import sensor, setting
+from ..devicestatus import sensor, setting
 
 
 def test_descriptors_from_device_object(dummy_device):

@@ -4,12 +4,12 @@ from typing import List, Optional, Tuple
 
 import click
 
-from miio.click_common import command, format_output
-from miio.descriptors import ValidSettingRange
-from miio.device import Device, DeviceStatus
-from miio.devicestatus import action, sensor, setting
-from miio.identifiers import LightId
-from miio.utils import int_to_rgb, rgb_to_int
+from ....click_common import command, format_output
+from ....descriptors import ValidSettingRange
+from ....device import Device, DeviceStatus
+from ....devicestatus import action, sensor, setting
+from ....identifiers import LightId
+from ....utils import int_to_rgb, rgb_to_int
 
 from .spec_helper import YeelightSpecHelper, YeelightSubLightType
 

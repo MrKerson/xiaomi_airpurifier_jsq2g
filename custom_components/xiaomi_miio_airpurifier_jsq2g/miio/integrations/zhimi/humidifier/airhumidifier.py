@@ -5,9 +5,9 @@ from typing import Any, Dict, Optional
 
 import click
 
-from miio import Device, DeviceError, DeviceInfo, DeviceStatus
-from miio.click_common import EnumType, command, format_output
-from miio.devicestatus import sensor, setting
+from ....device import Device, DeviceError, DeviceInfo, DeviceStatus
+from ....click_common import EnumType, command, format_output
+from ....devicestatus import sensor, setting
 
 _LOGGER = logging.getLogger(__name__)
 

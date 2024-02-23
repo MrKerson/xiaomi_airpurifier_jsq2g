@@ -5,9 +5,9 @@ from typing import Dict
 
 import click
 
-from miio.click_common import EnumType, command, format_output
-from miio.devicestatus import sensor, setting
-from miio.miot_device import DeviceStatus, MiotDevice
+from ....click_common import EnumType, command, format_output
+from ....devicestatus import sensor, setting
+from ....miot_device import DeviceStatus, MiotDevice
 
 _LOGGER = logging.getLogger(__name__)
 MI_ROBOT_VACUUM_MOP_PRO_2 = "ijai.vacuum.v3"

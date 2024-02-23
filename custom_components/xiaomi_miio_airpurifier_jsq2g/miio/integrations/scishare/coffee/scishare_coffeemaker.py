@@ -3,9 +3,9 @@ from enum import IntEnum
 
 import click
 
-from miio import Device, DeviceStatus
-from miio.click_common import command, format_output
-from miio.devicestatus import sensor
+from ....device import Device, DeviceStatus
+from ....click_common import command, format_output
+from ....devicestatus import sensor
 
 _LOGGER = logging.getLogger(__name__)
 

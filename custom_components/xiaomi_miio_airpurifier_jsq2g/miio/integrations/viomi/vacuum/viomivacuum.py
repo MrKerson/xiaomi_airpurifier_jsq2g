@@ -52,16 +52,16 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import click
 
-from miio.click_common import EnumType, command
-from miio.device import Device
-from miio.devicestatus import DeviceStatus, action, sensor, setting
-from miio.exceptions import DeviceException
-from miio.identifiers import VacuumId, VacuumState
-from miio.integrations.roborock.vacuum.vacuumcontainers import (  # TODO: remove roborock import
+from ....click_common import EnumType, command
+from ....device import Device
+from ....devicestatus import DeviceStatus, action, sensor, setting
+from ....exceptions import DeviceException
+from ....identifiers import VacuumId, VacuumState
+from ....integrations.roborock.vacuum.vacuumcontainers import (  # TODO: remove roborock import
     ConsumableStatus,
     DNDStatus,
 )
-from miio.utils import pretty_seconds
+from ....utils import pretty_seconds
 
 _LOGGER = logging.getLogger(__name__)
 

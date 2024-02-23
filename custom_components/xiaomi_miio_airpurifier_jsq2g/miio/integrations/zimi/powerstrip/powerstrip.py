@@ -5,10 +5,10 @@ from typing import Any, Dict, Optional
 
 import click
 
-from miio import Device, DeviceStatus
-from miio.click_common import EnumType, command, format_output
-from miio.devicestatus import sensor, setting
-from miio.utils import deprecated
+from ....device import Device, DeviceStatus
+from ....click_common import EnumType, command, format_output
+from ....devicestatus import sensor, setting
+from ....utils import deprecated
 
 _LOGGER = logging.getLogger(__name__)
 

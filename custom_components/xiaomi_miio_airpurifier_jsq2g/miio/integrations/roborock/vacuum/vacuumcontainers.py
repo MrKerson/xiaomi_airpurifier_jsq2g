@@ -6,10 +6,10 @@ from typing import Any, Dict, List, Optional, Union
 from croniter import croniter
 from pytz import BaseTzInfo
 
-from miio.device import DeviceStatus
-from miio.devicestatus import sensor, setting
-from miio.identifiers import VacuumId, VacuumState
-from miio.utils import pretty_seconds, pretty_time
+from ....device import DeviceStatus
+from ....devicestatus import sensor, setting
+from ....identifiers import VacuumId, VacuumState
+from ....utils import pretty_seconds, pretty_time
 
 from .vacuum_enums import MopIntensity, MopMode
 

@@ -7,23 +7,23 @@ from importlib.metadata import version  # type: ignore
 
 # isort: off
 
-from miio.device import Device
-from miio.devicestatus import DeviceStatus
-from miio.exceptions import (
+from .device import Device
+from .devicestatus import DeviceStatus
+from .exceptions import (
     DeviceError,
     InvalidTokenException,
     DeviceException,
     UnsupportedFeatureException,
     DeviceInfoUnavailableException,
 )
-from miio.miot_device import MiotDevice
-from miio.deviceinfo import DeviceInfo
+from .miot_device import MiotDevice
+from .deviceinfo import DeviceInfo
 
 # isort: on
 
-from miio.cloud import CloudDeviceInfo, CloudException, CloudInterface
-from miio.descriptorcollection import DescriptorCollection
-from miio.descriptors import (
+from .cloud import CloudDeviceInfo, CloudException, CloudInterface
+from .descriptorcollection import DescriptorCollection
+from .descriptors import (
     AccessFlags,
     ActionDescriptor,
     Descriptor,
@@ -32,39 +32,39 @@ from miio.descriptors import (
     RangeDescriptor,
     ValidSettingRange,
 )
-from miio.devicefactory import DeviceFactory
-from miio.integrations.airdog.airpurifier import AirDogX3
-from miio.integrations.cgllc.airmonitor import AirQualityMonitor, AirQualityMonitorCGDN1
-from miio.integrations.chuangmi.camera import ChuangmiCamera
-from miio.integrations.chuangmi.plug import ChuangmiPlug
-from miio.integrations.chuangmi.remote import ChuangmiIr
-from miio.integrations.chunmi.cooker import Cooker
-from miio.integrations.deerma.humidifier import AirHumidifierJsqs, AirHumidifierMjjsq
-from miio.integrations.dmaker.airfresh import AirFreshA1, AirFreshT2017
-from miio.integrations.dmaker.fan import Fan1C, FanMiot, FanP5
-from miio.integrations.dreame.vacuum import DreameVacuum
-from miio.integrations.genericmiot.genericmiot import GenericMiot
-from miio.integrations.huayi.light import (
+from .devicefactory import DeviceFactory
+from .integrations.airdog.airpurifier import AirDogX3
+from .integrations.cgllc.airmonitor import AirQualityMonitor, AirQualityMonitorCGDN1
+from .integrations.chuangmi.camera import ChuangmiCamera
+from .integrations.chuangmi.plug import ChuangmiPlug
+from .integrations.chuangmi.remote import ChuangmiIr
+from .integrations.chunmi.cooker import Cooker
+from .integrations.deerma.humidifier import AirHumidifierJsqs, AirHumidifierMjjsq
+from .integrations.dmaker.airfresh import AirFreshA1, AirFreshT2017
+from .integrations.dmaker.fan import Fan1C, FanMiot, FanP5
+from .integrations.dreame.vacuum import DreameVacuum
+from .integrations.genericmiot.genericmiot import GenericMiot
+from .integrations.huayi.light import (
     Huizuo,
     HuizuoLampFan,
     HuizuoLampHeater,
     HuizuoLampScene,
 )
-from miio.integrations.ijai.vacuum import Pro2Vacuum
-from miio.integrations.ksmb.walkingpad import Walkingpad
-from miio.integrations.leshow.fan import FanLeshow
-from miio.integrations.lumi.acpartner import (
+from .integrations.ijai.vacuum import Pro2Vacuum
+from .integrations.ksmb.walkingpad import Walkingpad
+from .integrations.leshow.fan import FanLeshow
+from .integrations.lumi.acpartner import (
     AirConditioningCompanion,
     AirConditioningCompanionMcn02,
     AirConditioningCompanionV3,
 )
-from miio.integrations.lumi.camera.aqaracamera import AqaraCamera
-from miio.integrations.lumi.curtain import CurtainMiot
-from miio.integrations.lumi.gateway import Gateway
-from miio.integrations.mijia.vacuum import G1Vacuum
-from miio.integrations.mmgg.petwaterdispenser import PetWaterDispenser
-from miio.integrations.nwt.dehumidifier import AirDehumidifier
-from miio.integrations.philips.light import (
+from .integrations.lumi.camera.aqaracamera import AqaraCamera
+from .integrations.lumi.curtain import CurtainMiot
+from .integrations.lumi.gateway import Gateway
+from .integrations.mijia.vacuum import G1Vacuum
+from .integrations.mmgg.petwaterdispenser import PetWaterDispenser
+from .integrations.nwt.dehumidifier import AirDehumidifier
+from .integrations.philips.light import (
     Ceil,
     PhilipsBulb,
     PhilipsEyecare,
@@ -72,29 +72,29 @@ from miio.integrations.philips.light import (
     PhilipsRwread,
     PhilipsWhiteBulb,
 )
-from miio.integrations.pwzn.relay import PwznRelay
-from miio.integrations.roborock.vacuum import RoborockVacuum
-from miio.integrations.roidmi.vacuum import RoidmiVacuumMiot
-from miio.integrations.scishare.coffee import ScishareCoffee
-from miio.integrations.shuii.humidifier import AirHumidifierJsq
-from miio.integrations.tinymu.toiletlid import Toiletlid
-from miio.integrations.viomi.vacuum import ViomiVacuum
-from miio.integrations.viomi.viomidishwasher import ViomiDishwasher
-from miio.integrations.xiaomi.aircondition.airconditioner_miot import AirConditionerMiot
-from miio.integrations.xiaomi.repeater.wifirepeater import WifiRepeater
-from miio.integrations.xiaomi.wifispeaker.wifispeaker import WifiSpeaker
-from miio.integrations.yeelight.dual_switch import YeelightDualControlModule
-from miio.integrations.yeelight.light import Yeelight
-from miio.integrations.yunmi.waterpurifier import WaterPurifier, WaterPurifierYunmi
-from miio.integrations.zhimi.airpurifier import AirFresh, AirPurifier, AirPurifierMiot
-from miio.integrations.zhimi.fan import Fan, FanZA5
-from miio.integrations.zhimi.heater import Heater, HeaterMiot
-from miio.integrations.zhimi.humidifier import AirHumidifier, AirHumidifierMiot
-from miio.integrations.zimi.powerstrip import PowerStrip
-from miio.protocol import Message, Utils
-from miio.push_server import EventInfo, PushServer
+from .integrations.pwzn.relay import PwznRelay
+from .integrations.roborock.vacuum import RoborockVacuum
+from .integrations.roidmi.vacuum import RoidmiVacuumMiot
+from .integrations.scishare.coffee import ScishareCoffee
+from .integrations.shuii.humidifier import AirHumidifierJsq
+from .integrations.tinymu.toiletlid import Toiletlid
+from .integrations.viomi.vacuum import ViomiVacuum
+from .integrations.viomi.viomidishwasher import ViomiDishwasher
+from .integrations.xiaomi.aircondition.airconditioner_miot import AirConditionerMiot
+from .integrations.xiaomi.repeater.wifirepeater import WifiRepeater
+from .integrations.xiaomi.wifispeaker.wifispeaker import WifiSpeaker
+from .integrations.yeelight.dual_switch import YeelightDualControlModule
+from .integrations.yeelight.light import Yeelight
+from .integrations.yunmi.waterpurifier import WaterPurifier, WaterPurifierYunmi
+from .integrations.zhimi.airpurifier import AirFresh, AirPurifier, AirPurifierMiot
+from .integrations.zhimi.fan import Fan, FanZA5
+from .integrations.zhimi.heater import Heater, HeaterMiot
+from .integrations.zhimi.humidifier import AirHumidifier, AirHumidifierMiot
+from .integrations.zimi.powerstrip import PowerStrip
+from .protocol import Message, Utils
+from .push_server import EventInfo, PushServer
 
-from miio.discovery import Discovery
+from .discovery import Discovery
 
 
 def __getattr__(name):

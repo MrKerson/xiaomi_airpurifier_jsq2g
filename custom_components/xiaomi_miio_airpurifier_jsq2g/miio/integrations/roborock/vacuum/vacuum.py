@@ -14,17 +14,17 @@ import click
 import pytz
 from appdirs import user_cache_dir
 
-from miio.click_common import (
+from ....click_common import (
     DeviceGroup,
     EnumType,
     GlobalContextObject,
     LiteralParamType,
     command,
 )
-from miio.device import Device, DeviceInfo
-from miio.devicestatus import DeviceStatus, action
-from miio.exceptions import DeviceInfoUnavailableException, UnsupportedFeatureException
-from miio.identifiers import VacuumId
+from ....device import Device, DeviceInfo
+from ....devicestatus import DeviceStatus, action
+from ....exceptions import DeviceInfoUnavailableException, UnsupportedFeatureException
+from ....identifiers import VacuumId
 
 from .updatehelper import UpdateHelper
 from .vacuum_enums import (
