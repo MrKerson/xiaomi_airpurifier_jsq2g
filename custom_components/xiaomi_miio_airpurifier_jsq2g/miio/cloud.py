@@ -20,7 +20,7 @@ from .exceptions import CloudException
 _LOGGER = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
-    from micloud import MiCloud  # noqa: F401
+    from ..micloud import MiCloud  # noqa: F401
 
 AVAILABLE_LOCALES = {
     "all": "All",
@@ -101,8 +101,8 @@ class CloudInterface:
             return
 
         try:
-            from micloud import MiCloud  # noqa: F811
-            from micloud.micloudexception import MiCloudAccessDenied
+            from ..micloud import MiCloud  # noqa: F811
+            from ..micloud.micloudexception import MiCloudAccessDenied
         except ImportError:
             raise CloudException(
                 "You need to install 'micloud' package to use cloud interface"
