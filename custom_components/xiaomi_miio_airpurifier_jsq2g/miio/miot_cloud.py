@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 import appdirs
-from micloud.miotspec import MiotSpec
+from ..micloud.micloud import MiotSpec
 
 try:
     from pydantic.v1 import BaseModel, Field
