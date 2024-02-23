@@ -4,12 +4,12 @@ from enum import Enum
 from functools import partial
 import logging
 
-from miio import (  # pylint: disable=import-error
+from .miio import (  # pylint: disable=import-error
     AirDehumidifier,
     Device,
     DeviceException,
 )
-from miio.integrations.nwt.dehumidifier.airdehumidifier import (  # pylint: disable=import-error, import-error
+from .miio.integrations.nwt.dehumidifier.airdehumidifier import (  # pylint: disable=import-error, import-error
     FanSpeed as AirdehumidifierFanSpeed,
     OperationMode as AirdehumidifierOperationMode,
 )

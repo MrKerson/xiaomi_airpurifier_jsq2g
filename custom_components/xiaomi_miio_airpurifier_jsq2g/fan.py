@@ -5,7 +5,7 @@ from functools import partial
 import logging
 from typing import Optional
 
-from miio import (  # pylint: disable=import-error
+from .miio import (  # pylint: disable=import-error
     AirDogX3,
     AirFresh,
     AirFreshA1,
@@ -25,54 +25,54 @@ from miio import (  # pylint: disable=import-error
     FanMiot,
     FanP5,
 )
-from miio.integrations.zhimi.airpurifier.airfresh import (  # pylint: disable=import-error, import-error
+from .miio.integrations.zhimi.airpurifier.airfresh import (  # pylint: disable=import-error, import-error
     LedBrightness as AirfreshLedBrightness,
     OperationMode as AirfreshOperationMode,
 )
-from miio.integrations.dmaker.airfresh.airfresh_t2017 import (  # pylint: disable=import-error, import-error
+from .miio.integrations.dmaker.airfresh.airfresh_t2017 import (  # pylint: disable=import-error, import-error
     DisplayOrientation as AirfreshT2017DisplayOrientation,
     OperationMode as AirfreshT2017OperationMode,
     PtcLevel as AirfreshT2017PtcLevel,
 )
-from miio.integrations.zhimi.humidifier.airhumidifier import (  # pylint: disable=import-error, import-error
+from .miio.integrations.zhimi.humidifier.airhumidifier import (  # pylint: disable=import-error, import-error
     LedBrightness as AirhumidifierLedBrightness,
     OperationMode as AirhumidifierOperationMode,
 )
-from miio.integrations.shuii.humidifier.airhumidifier_jsq import (  # pylint: disable=import-error, import-error
+from .miio.integrations.shuii.humidifier.airhumidifier_jsq import (  # pylint: disable=import-error, import-error
     LedBrightness as AirhumidifierJsqLedBrightness,
     OperationMode as AirhumidifierJsqOperationMode,
 )
-from miio.integrations.zhimi.humidifier.airhumidifier_miot import (  # pylint: disable=import-error, import-error
+from .miio.integrations.zhimi.humidifier.airhumidifier_miot import (  # pylint: disable=import-error, import-error
     LedBrightness as AirhumidifierMiotLedBrightness,
     OperationMode as AirhumidifierMiotOperationMode,
     PressedButton as AirhumidifierPressedButton,
 )
-from miio.integrations.deerma.humidifier.airhumidifier_mjjsq import (  # pylint: disable=import-error, import-error
+from .miio.integrations.deerma.humidifier.airhumidifier_mjjsq import (  # pylint: disable=import-error, import-error
     OperationMode as AirhumidifierMjjsqOperationMode,
 )
-from miio.integrations.zhimi.airpurifier.airpurifier import (  # pylint: disable=import-error, import-error
+from .miio.integrations.zhimi.airpurifier.airpurifier import (  # pylint: disable=import-error, import-error
     LedBrightness as AirpurifierLedBrightness,
     OperationMode as AirpurifierOperationMode,
 )
-from miio.integrations.airdog.airpurifier.airpurifier_airdog import (  # pylint: disable=import-error, import-error
+from .miio.integrations.airdog.airpurifier.airpurifier_airdog import (  # pylint: disable=import-error, import-error
     OperationMode as AirDogOperationMode,
 )
-from miio.integrations.zhimi.airpurifier.airpurifier_miot import (  # pylint: disable=import-error, import-error
+from .miio.integrations.zhimi.airpurifier.airpurifier_miot import (  # pylint: disable=import-error, import-error
     LedBrightness as AirpurifierMiotLedBrightness,
     OperationMode as AirpurifierMiotOperationMode,
 )
-from miio.integrations.dmaker.fan.fan import (  
+from .miio.integrations.dmaker.fan.fan import (  
     MoveDirection as FanMoveDirection,
     OperationMode as FanOperationMode,
 )
-from miio.integrations.zhimi.fan.fan import ( # pylint: disable=import-error, import-error
+from .miio.integrations.zhimi.fan.fan import ( # pylint: disable=import-error, import-error
     LedBrightness as FanLedBrightness,
 )
 
-from miio.integrations.leshow.fan.fan_leshow import (  # pylint: disable=import-error, import-error
+from .miio.integrations.leshow.fan.fan_leshow import (  # pylint: disable=import-error, import-error
     OperationMode as FanLeshowOperationMode,
 )
-from miio.integrations.deerma.humidifier.airhumidifier_jsqs import (  # pylint: disable=import-error, import-error
+from .miio.integrations.deerma.humidifier.airhumidifier_jsqs import (  # pylint: disable=import-error, import-error
     OperationMode as AirhumidifierJsqsOperationMode,
 )
 import voluptuous as vol
