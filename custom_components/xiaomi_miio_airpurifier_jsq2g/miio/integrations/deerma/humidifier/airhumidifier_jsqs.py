@@ -12,9 +12,11 @@ _MAPPING = {
     # Source https://miot-spec.org/miot-spec-v2/instance?type=urn:miot-spec-v2:device:humidifier:0000A00E:deerma-jsqs:2
     # Air Humidifier (siid=2)
     "power": {"siid": 2, "piid": 1},  # bool
-    "fault": {"siid": 2, "piid": 2},  # 0
-    "mode": {"siid": 2, "piid": 5},  # 1 - lvl1, 2 - lvl2, 3 - lvl3, 4 - auto
+    "fault": {"siid": 2, "piid": 2},  # 0 - No Faults, 1 - Insufficient Water, 2 - Water Separation
+    "fan_level": {"siid": 2, "piid": 5},  # 1 - lvl1, 2 - lvl2, 3 - lvl3, 4 - auto
     "target_humidity": {"siid": 2, "piid": 6},  # [40, 80] step 1
+    "status": {"siid": 2, "piid": 7},  # 1 - Idle, 2 - Busy
+    "mode": {"siid": 2, "piid": 8},  # 0 - None, 1 - Constant Humidity
     # Environment (siid=3)
     "relative_humidity": {"siid": 3, "piid": 1},  # [0, 100] step 1
     "temperature": {"siid": 3, "piid": 7},  # [-30, 100] step 1
@@ -23,14 +25,17 @@ _MAPPING = {
     # Light (siid=6)
     "led_light": {"siid": 6, "piid": 1},  # bool
     # Other (siid=7)
-    "water_shortage_fault": {"siid": 7, "piid": 1},  # bool
-    "tank_filed": {"siid": 7, "piid": 2},  # bool
-    "overwet_protect": {"siid": 7, "piid": 3},  # bool
+    "tank_filed": {"siid": 7, "piid": 1},  # bool
+    "water_shortage_fault": {"siid": 7, "piid": 2},  # bool
+    "humi_sensor_fault": {"siid": 7, "piid": 3},  # bool
+    "temp_sensor_fault": {"siid": 7, "piid": 4},  # bool
+    "overwet_protect": {"siid": 7, "piid": 5},  # bool
+    "overwet_protect_on": {"siid": 7, "piid": 6},  # bool
+    "overtop_humidity": {"siid": 7, "piid": 7},  # bool
+    "overtop_humidity": {"siid": 7, "piid": 8},  # bool
 }
 
 SUPPORTED_MODELS = [
-    "deerma.humidifier.jsqs",
-    "deerma.humidifier.jsq5",
     "deerma.humidifier.jsq2w",
     "deerma.humidifier.jsq2g",
 ]
@@ -45,24 +50,7 @@ class OperationMode(enum.Enum):
 
 
 class AirHumidifierJsqsStatus(DeviceStatus):
-    """Container for status reports from the air humidifier.
-
-    Xiaomi Mi Smart Humidifer S (deerma.humidifier.[jsqs, jsq5, jsq2w, jsq2g]) response (MIoT format)::
-
-        [
-            {'did': 'power', 'siid': 2, 'piid': 1, 'code': 0, 'value': True},
-            {'did': 'fault', 'siid': 2, 'piid': 2, 'code': 0, 'value': 0},
-            {'did': 'mode', 'siid': 2, 'piid': 5, 'code': 0, 'value': 1},
-            {'did': 'target_humidity', 'siid': 2, 'piid': 6, 'code': 0, 'value': 50},
-            {'did': 'relative_humidity', 'siid': 3, 'piid': 1, 'code': 0, 'value': 40},
-            {'did': 'temperature', 'siid': 3, 'piid': 7, 'code': 0, 'value': 22.7},
-            {'did': 'buzzer', 'siid': 5, 'piid': 1, 'code': 0, 'value': False},
-            {'did': 'led_light', 'siid': 6, 'piid': 1, 'code': 0, 'value': True},
-            {'did': 'water_shortage_fault', 'siid': 7, 'piid': 1, 'code': 0, 'value': False},
-            {'did': 'tank_filed', 'siid': 7, 'piid': 2, 'code': 0, 'value': False},
-            {'did': 'overwet_protect', 'siid': 7, 'piid': 3, 'code': 0, 'value': False}
-        ]
-    """
+    
 
     def __init__(self, data: Dict[str, Any]) -> None:
         self.data = data
@@ -85,16 +73,16 @@ class AirHumidifierJsqsStatus(DeviceStatus):
         return self.data["fault"]
 
     @property
-    def mode(self) -> OperationMode:
-        """Return current operation mode."""
+    def fan_level(self) -> OperationMode:
+        """Return current operation fan level."""
 
         try:
-            mode = OperationMode(self.data["mode"])
+            fan_level = OperationMode(self.data["fan_level"])
         except ValueError as e:
-            _LOGGER.exception("Cannot parse mode: %s", e)
+            _LOGGER.exception("Cannot parse fan level: %s", e)
             return OperationMode.Auto
 
-        return mode
+        return fan_level
 
     @property
     def target_humidity(self) -> Optional[int]:
@@ -133,16 +121,34 @@ class AirHumidifierJsqsStatus(DeviceStatus):
     def tank_filed(self) -> Optional[bool]:
         """Return the tank filed."""
         return self.data.get("tank_filed")
-
+    
     @property
     def water_shortage_fault(self) -> Optional[bool]:
         """Return water shortage fault."""
         return self.data.get("water_shortage_fault")
 
     @property
+    def humi_sensor_fault(self) -> Optional[bool]:
+        return self.data.get("humi_sensor_fault")
+
+    @property
     def overwet_protect(self) -> Optional[bool]:
         """Return True if overwet mode is active."""
-        return self.data.get("overwet_protect")
+        return self.data.get("overwet_protect") 
+    
+
+    @property
+    def overwet_protect_on(self) -> Optional[bool]:
+        return self.data.get("overwet_protect_on") 
+    
+    @property
+    def overtop_humidity(self) -> Optional[bool]:
+        return self.data.get("overtop_humidity") 
+    
+    @property
+    def temp_sensor_fault(self) -> Optional[bool]:
+        return self.data.get("temp_sensor_fault") 
+    
 
 
 class AirHumidifierJsqs(MiotDevice):
@@ -191,19 +197,19 @@ class AirHumidifierJsqs(MiotDevice):
     )
     def set_target_humidity(self, humidity: int):
         """Set target humidity."""
-        if humidity < 40 or humidity > 80:
+        if humidity <= 40 or humidity >= 70:
             raise ValueError(
-                "Invalid target humidity: %s. Must be between 40 and 80" % humidity
+                "Invalid target humidity: %s. Must be between 40 and 70" % humidity
             )
         return self.set_property("target_humidity", humidity)
 
     @command(
-        click.argument("mode", type=EnumType(OperationMode)),
-        default_output=format_output("Setting mode to '{mode.value}'"),
+        click.argument("fan_level", type=EnumType(OperationMode)),
+        default_output=format_output("Setting fan_level to '{mode.value}'"),
     )
-    def set_mode(self, mode: OperationMode):
-        """Set working mode."""
-        return self.set_property("mode", mode.value)
+    def set_fan_level(self, fan_level: OperationMode):
+        """Set working fan_level."""
+        return self.set_property("fan_level", fan_level.value)
 
     @command(
         click.argument("light", type=bool),
@@ -234,3 +240,14 @@ class AirHumidifierJsqs(MiotDevice):
     def set_overwet_protect(self, overwet: bool):
         """Set overwet mode on/off."""
         return self.set_property("overwet_protect", overwet)
+    
+    
+
+    @command(
+        click.argument("overwet_protect_on", type=bool),
+        default_output=format_output(
+            lambda overwet: "Turning on overwet_protect_on" if overwet else "Turning off overwet_protect_on"
+        ),
+    )
+    def set_overwet_protect_on(self, overwet_protect_on: bool):
+        return self.set_property("overwet_protect_on", overwet_protect_on)
