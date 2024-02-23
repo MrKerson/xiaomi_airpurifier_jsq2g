@@ -13,8 +13,7 @@ import time, locale, datetime
 import tzlocal
 import requests
 
-from micloud import miutils
-from .miutils import get_session
+from .miutils import get_session, gen_nonce, signed_nonce, generate_enc_params, decrypt_rc4
 from .micloudexception import MiCloudAccessDenied, MiCloudException
 
 
@@ -302,15 +301,14 @@ class MiCloud:
             logging.debug('Cookie: %s', c)
 
         try:
-            nonce = miutils.gen_nonce()
-            signed_nonce = miutils.signed_nonce(self.ssecurity, nonce) 
-            post_data = miutils.generate_enc_params(url, "POST", signed_nonce, nonce, params, self.ssecurity)
+            nonce = gen_nonce()
+            post_data = generate_enc_params(url, "POST", signed_nonce(self.ssecurity, nonce) , nonce, params, self.ssecurity)
 
             response = self.session.post(url, data = post_data)
             if response.status_code == 403:
                 self.service_token = None
 
-            return miutils.decrypt_rc4(miutils.signed_nonce(self.ssecurity, post_data["_nonce"]), response.text)
+            return decrypt_rc4(signed_nonce(self.ssecurity, post_data["_nonce"]), response.text)
         except requests.exceptions.HTTPError as e:
             self.service_token = None
             logging.exception("Error while executing request to %s :%s", url, str(e))
