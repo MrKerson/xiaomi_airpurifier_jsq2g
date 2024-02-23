@@ -7,7 +7,7 @@ fan_set_buzzer_on:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_buzzer_off:
@@ -19,7 +19,7 @@ fan_set_buzzer_off:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_led_on:
@@ -31,7 +31,7 @@ fan_set_led_on:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_led_off:
@@ -43,7 +43,7 @@ fan_set_led_off:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_child_lock_on:
@@ -55,7 +55,7 @@ fan_set_child_lock_on:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_child_lock_off:
@@ -67,7 +67,7 @@ fan_set_child_lock_off:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_favorite_level:
@@ -79,7 +79,7 @@ fan_set_favorite_level:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
     level:
       name: Level
@@ -95,7 +95,7 @@ fan_set_fan_level:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
     level:
       name: Level
@@ -111,7 +111,7 @@ fan_set_led_brightness:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
     brightness:
       name: Brightness
@@ -127,7 +127,7 @@ fan_set_auto_detect_on:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_auto_detect_off:
@@ -139,7 +139,7 @@ fan_set_auto_detect_off:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_learn_mode_on:
@@ -151,7 +151,7 @@ fan_set_learn_mode_on:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_learn_mode_off:
@@ -163,7 +163,7 @@ fan_set_learn_mode_off:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_volume:
@@ -175,7 +175,7 @@ fan_set_volume:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
     volume:
       name: Volume
@@ -191,7 +191,7 @@ fan_reset_filter:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_extra_features:
@@ -203,7 +203,7 @@ fan_set_extra_features:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
     features:
       name: Features
@@ -219,7 +219,7 @@ fan_set_target_humidity:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
     humidity:
       name: Humidity
@@ -235,7 +235,7 @@ fan_set_dry_on:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_dry_off:
@@ -247,7 +247,7 @@ fan_set_dry_off:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan
 
 fan_set_filters_cleaned:
@@ -259,5 +259,5 @@ fan_set_filters_cleaned:
       description: Name of the xiaomi miio airpurifier entity.
       selector:
         entity:
-          integration: xiaomi_miio_airpurifier
+          integration: xiaomi_miio_airpurifier_jsq2g
           domain: fan

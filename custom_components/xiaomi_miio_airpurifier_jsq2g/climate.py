@@ -9,7 +9,7 @@ from miio import (  # pylint: disable=import-error
     Device,
     DeviceException,
 )
-from miio.airdehumidifier import (  # pylint: disable=import-error, import-error
+from miio.integrations.nwt.dehumidifier.airdehumidifier import (  # pylint: disable=import-error, import-error
     FanSpeed as AirdehumidifierFanSpeed,
     OperationMode as AirdehumidifierOperationMode,
 )
@@ -45,7 +45,7 @@ import homeassistant.helpers.config_validation as cv
 _LOGGER = logging.getLogger(__name__)
 
 DEFAULT_NAME = "Xiaomi Miio Device"
-DATA_KEY = "fan.xiaomi_miio_airpurifier"
+DATA_KEY = "fan.xiaomi_miio_airpurifier_jsq2g"
 
 CONF_MODEL = "model"
 MODEL_AIRDEHUMIDIFIER_V1 = "nwt.derh.wdh318efw1"
