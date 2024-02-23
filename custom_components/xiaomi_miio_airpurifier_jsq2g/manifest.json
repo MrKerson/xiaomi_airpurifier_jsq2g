@@ -1,0 +1,15 @@
+{
+  "domain": "xiaomi_miio_airpurifier_jsq2g",
+  "name": "Xiaomi Air Humidifier JSQ2G",
+  "codeowners": [
+    "@MrKerson"
+  ],
+  "config_flow": false,
+  "dependencies": [],
+  "documentation": "https://github.com/MrKerson/xiaomi_airpurifier_jsq2g",
+  "iot_class": "local_polling",
+  "requirements": [
+    "construct==2.10.68"
+  ],
+  "version": "2023.12.0.0"
+}
