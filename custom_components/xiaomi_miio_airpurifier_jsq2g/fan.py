@@ -25,7 +25,7 @@ from miio import (  # pylint: disable=import-error
     FanMiot,
     FanP5,
 )
-from  miio.integrations.zhimi.airpurifier.airfresh import (  # pylint: disable=import-error, import-error
+from miio.integrations.zhimi.airpurifier.airfresh import (  # pylint: disable=import-error, import-error
     LedBrightness as AirfreshLedBrightness,
     OperationMode as AirfreshOperationMode,
 )
