@@ -13,7 +13,7 @@ import time, locale, datetime
 import tzlocal
 import requests
 
-from .micloud import miutils
+from micloud import miutils
 from .miutils import get_session
 from .micloudexception import MiCloudAccessDenied, MiCloudException
 
